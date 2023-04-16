@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ====== Fontawesome CDN Link ====== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="toast">
+        <div class="toast-content">
+            <i id="logo" class="fas fa-solid fa-check check"></i>
+
+            <div class="message">
+                <span id="text-1" class="text text-1">Success</span>
+                <span id="text-2" class="text text-2">The product has been added successfully</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress"></div>
+    </div>
+
+
+    <div class="cruds">
+        <div class="head">
+            <h2 class="title">CRUDS</h2>
+            <p>PRODUCTS MANAGMENT SYSTEM</p>
+        </div>
+
+        <div class="inputs">
+            <input placeholder="title" type="text" id="title">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+                <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+                <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+                <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+                <small id="total"></small>
+            </div>
+            <input placeholder="count" type="number" id="count">
+            <input placeholder="category" type="text" id="category">
+            <button onclick="createProduct()" id="submit">Create</button>
+        </div>
+
+        <div class="outputs">
+            <div class="searchBlock">
+                <input onkeyup="SearchData(this.value)" type="text" id="search" placeholder="search">
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+            </div>
+            <div id="deleteAll">
+
+            </div>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+
+        </div>
+        <footer class="footer">copyright@ by <span>sameh dev</span></footer>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+</html>
